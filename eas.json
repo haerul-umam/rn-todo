@@ -1,4 +1,5 @@
 {
+  "cli": { "requireCommit": true },
     "build": {
       "development": {
         "developmentClient": true,
