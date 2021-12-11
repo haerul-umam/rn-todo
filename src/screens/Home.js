@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { ListItem, Icon,Button, Input, Image } from 'react-native-elements'
 import { Swipeable } from 'react-native-gesture-handler';
 import TouchableScale from 'react-native-touchable-scale'; 
+
 import { useFocusEffect } from '@react-navigation/native';
 import { API } from '../../api';
 
@@ -105,6 +106,7 @@ const Home = (props) => {
             <Swipeable
             renderRightActions={rightSwipe}
             renderLeftActions={leftSwipe}
+            
             onSwipeableRightWillOpen={() => {setName(item.name)}}
             >
                 <ListItem Component={TouchableScale} 
@@ -131,8 +133,15 @@ const Home = (props) => {
 
     useFocusEffect(
         React.useCallback(() => {
+            // logic onfocus
             getCollection()
             setGreeting(greet())
+
+            /*
+            return () => {
+                logic unfocus
+            }
+            */
 
         }, [])
     )
